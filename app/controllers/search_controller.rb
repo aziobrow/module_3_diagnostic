@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
   def index
-    @stations = Station.where(fuel_type: ["ELECT", "LPG"])
+    @stations = Station.nearest_stations(params[:q])
   end
 end

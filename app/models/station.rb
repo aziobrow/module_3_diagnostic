@@ -9,4 +9,15 @@ def Station
     @distance = raw_station_info.distance
     @access_hours = raw_station_info.access_days_time
   end
+
+  def self.nearest_stations(zipcode)
+    require "pry"; binding.pry
+    all_stations_raw_info = NrelService.new(zipcode).get_station_info
+    all_stations_raw_info.map do |one_station_info|
+      new(one_station_info)
+    end
+  end
+
+
+
 end

@@ -9,7 +9,7 @@ attr_reader :conn, :zipcode
     end
   end
 
-  def get_profile_info
+  def get_station_info
     get_json("/api/alt-fuel-stations/v1/nearest.json?api_key=#{ENV['API_KEY']}&location=#{@zipcode}&fuel_type=ELEC,LPG&limit=10")
   end
 
