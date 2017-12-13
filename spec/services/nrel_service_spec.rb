@@ -9,4 +9,15 @@ describe NrelService do
     end
   end
 
+  context "instance methods" do
+    it "returns a collection of station info" do
+      all_station_info = subject.get_station_info
+      one_station_info = all_station_info.first
+
+      expect(all_station_info.count).to eq(10)
+      expect(one_station_info).to be_a(Hash)
+    end
+
+  end
+
 end
