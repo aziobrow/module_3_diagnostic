@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
   def index
-    @fuel_types = FuelType.where(name: ["Electric", "Propane"])
+    @stations = Station.where(fuel_type: ["ELECT", "LPG"])
   end
 end
