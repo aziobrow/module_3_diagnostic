@@ -1,0 +1,12 @@
+<h1>Closest Stations to You</h1>
+
+<% @fuel_types.each do |fuel_type| %>
+  <h3><%= fuel_type.name %></h3>
+    <% fuel_type.stations.each do |station| %>
+      <%=  station.name %>
+      <%=  station.address %>
+      <%=  station.fuel_type %>
+      <%=  station.distance %>
+      <%=  station.access_time %>
+    <% end %>
+<% end %>
