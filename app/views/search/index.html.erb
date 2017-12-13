@@ -1,9 +1,11 @@
 <h1>Closest Stations to You</h1>
 
 <% @stations.each do |station| %>
-      <%=  station.name %>
-      <%=  station.address %>
-      <%=  station.fuel_type %>
-      <%=  station.distance %>
-      <%=  station.access_hours %>
+      <h3><%=  station.name %></h3>
+      <ul>
+      <li><%=  @station_presenter.full_address(station) %></li>
+      <li>Fuel Type: <%=  station.fuel_type %></li>
+      <li><%=  station.distance %> miles away</li>
+      <li>Open <%=  station.access_hours %></li>
+    </ul></br>
 <% end %>
